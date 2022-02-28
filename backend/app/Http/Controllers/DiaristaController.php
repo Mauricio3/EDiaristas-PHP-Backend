@@ -21,6 +21,9 @@ class DiaristaController extends Controller
         return view('create');
     }
 
+    /**
+     * Cria as diaristas no banco de dados
+     */
     public function store(Request $request)
     {
         $dados = $request->except('_token');
@@ -35,6 +38,9 @@ class DiaristaController extends Controller
         return redirect()->route('diaristas.index');
     }
 
+    /**
+     * Mostra o formulário para poder editar as diaristas
+     */
     public function edit(int $id)
     {
         $diarista = Diarista::findOrFail($id);
@@ -44,6 +50,9 @@ class DiaristaController extends Controller
         ]);
     }
 
+    /**
+     * Atualiza o registro da diarista no banco de dados
+     */
     public function update(int $id, Request $request)
     {
         $diarista = Diarista::findOrFail($id);
@@ -63,6 +72,9 @@ class DiaristaController extends Controller
         return redirect()->route('diaristas.index');
     }
 
+    /**
+     * Remove o registro da diarista no banco de dados
+     */
     public function destroy(int $id)
     {
         $diarista = Diarista::findOrFail($id);

@@ -34,7 +34,7 @@
 
 
     <div class=container>
-        @yield('conteudo');
+        @yield('conteudo')
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
